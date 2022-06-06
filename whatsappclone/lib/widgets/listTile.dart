@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whatsappclone/widgets/chat.dart';
 
-CustomListTile(String name, String message, Color clr, a) {
+CustomListTile(String name, String message, Color clr, a, context) {
   return Container(
     margin: const EdgeInsets.only(bottom: 3),
     child: ListTile(
@@ -9,22 +9,28 @@ CustomListTile(String name, String message, Color clr, a) {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => Chats(),
+            builder: (context) => chats(name, a, context),
           ),
         );
       },
       hoverColor: Colors.blue,
-      tileColor: Colors.grey,
       leading: CircleAvatar(backgroundImage: AssetImage(a)
           // NetworkImage(
           //     'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/479px-WhatsApp.svg.png'),
           ),
-      title: Text(name),
-      subtitle: Text(message),
+      title: Text(
+        name,
+        style: TextStyle(color: Colors.white),
+      ),
+      subtitle: Text(
+        message,
+        style: TextStyle(color: Colors.white),
+      ),
       trailing: Icon(
         Icons.check,
         color: Colors.blue,
       ),
+      tileColor: Colors.black87,
     ),
   );
 }

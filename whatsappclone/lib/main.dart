@@ -11,6 +11,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // theme: ThemeData(
+      //     colorScheme: ColorScheme(
+      //         brightness: Brightness.dark,
+      //         primary: Colors.black,
+      //         onPrimary: Colors.green,
+      //         secondary: Colors.blueAccent,
+      //         onSecondary: Colors.blueAccent,
+      //         error: Colors.red,
+      //         onError: Colors.red,
+      //         background: Colors.lime,
+      //         onBackground: Colors.lime,
+      //         surface: Colors.blueGrey,
+      //         onSurface: Colors.white)),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         // appBar: AppBar(
