@@ -141,6 +141,12 @@ class Dashboard extends StatelessWidget {
           ),
         ],
       ),
+      bottomNavigationBar: BottomNavigationBar(items: [
+        BottomNavigationBarItem(
+          icon: Icon(Icons.message),
+        ),
+      ],
+      ),
     );
   }
 }

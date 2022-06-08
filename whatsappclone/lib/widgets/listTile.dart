@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whatsappclone/widgets/chat.dart';
+import 'package:whatsappclone/widgets/chatpage.dart';
 
 CustomListTile(String name, String message, Color clr, a, context) {
   return Container(
@@ -9,7 +9,7 @@ CustomListTile(String name, String message, Color clr, a, context) {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => chats(name, a, context),
+            builder: (context) => chatPage(name, a, context),
           ),
         );
       },
