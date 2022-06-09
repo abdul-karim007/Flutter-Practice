@@ -8,4 +8,8 @@ class TextConstant {
   static String spartanBold = 'Spartan-Bold';
   static String verify = 'Verify';
   static String safedetails = 'Your personal details are safe with us';
+  static String privacypolicy =
+      'Read our Privacy Policy and Terms & Conditions';
+  static String nunitoR = 'Nunito-Regular';
+  static String dp = 'assets/images/dp.png';
 }

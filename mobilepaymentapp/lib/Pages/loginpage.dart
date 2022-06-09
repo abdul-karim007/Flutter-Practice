@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:mobilepaymentapp/Constants/ImageConstants/imgconstants.dart';
 import 'package:mobilepaymentapp/Constants/TextConstants/Textconstant.dart';
+import 'package:mobilepaymentapp/Pages/homepage.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -70,7 +71,13 @@ class LoginPage extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(30))),
                     color: Color(0xff4d5dfa),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const HomePage()),
+                      );
+                    },
                     child: Text(TextConstant.verify),
                   ),
                 ),
@@ -78,9 +85,21 @@ class LoginPage extends StatelessWidget {
                   TextConstant.safedetails,
                   style: TextStyle(
                     fontFamily: TextConstant.nunito,
-                    fontWeight: FontWeight.w400,
+                    fontFamilyFallback: [TextConstant.nunitoR],
                     color: Color(0xff7c82ba),
-                    fontSize: 20,
+                    fontSize: 16,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 15),
+                  child: Text(
+                    TextConstant.safedetails,
+                    style: TextStyle(
+                      fontFamily: TextConstant.nunito,
+                      fontFamilyFallback: [TextConstant.nunitoR],
+                      color: Color(0xff7c82ba),
+                      fontSize: 14,
+                    ),
                   ),
                 )
               ],
