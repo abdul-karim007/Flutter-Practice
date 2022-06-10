@@ -34,7 +34,6 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  getwidget: ^3.0.1
 
 dev_dependencies:
   flutter_test:
@@ -85,7 +84,6 @@ flutter:
         - asset: assets/fonts/Nunito-ExtraBold.ttf
         - asset: assets/fonts/Spartan-Bold.ttf
         - asset: assets/fonts/Nunito-Regular.ttf
-        - asset: assets/fonts/Spartan-SemiBold.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

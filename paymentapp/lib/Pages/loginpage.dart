@@ -14,7 +14,7 @@ class LoginPage extends StatelessWidget {
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage(ImageConstants.loginpage),
-            fit: BoxFit.fill,
+            fit: BoxFit.cover,
           ),
         ),
         child: Stack(
@@ -33,7 +33,7 @@ class LoginPage extends StatelessWidget {
                   style: TextStyle(
                       fontSize: 25,
                       color: Colors.white,
-                      fontFamily: TextConstant.sansSerif,
+                      fontFamily: TextConstant.nunito,
                       fontFamilyFallback: [TextConstant.nunitoB])),
             ),
             Column(
@@ -56,7 +56,7 @@ class LoginPage extends StatelessWidget {
                         ..text = TextConstant.number92,
                       style: TextStyle(
                           fontSize: 20,
-                          fontFamily: TextConstant.sansSerif,
+                          fontFamily: TextConstant.nunito,
                           fontFamilyFallback: [TextConstant.spartanBold],
                           color: Color(0xff4d5dfa)),
                     ),
@@ -83,7 +83,7 @@ class LoginPage extends StatelessWidget {
                 Text(
                   TextConstant.safedetails,
                   style: TextStyle(
-                    fontFamily: TextConstant.sansSerif,
+                    fontFamily: TextConstant.nunito,
                     fontFamilyFallback: [TextConstant.nunitoR],
                     color: Color(0xff7c82ba),
                     fontSize: 16,
@@ -94,7 +94,7 @@ class LoginPage extends StatelessWidget {
                   child: Text(
                     TextConstant.safedetails,
                     style: TextStyle(
-                      fontFamily: TextConstant.sansSerif,
+                      fontFamily: TextConstant.nunito,
                       fontFamilyFallback: [TextConstant.nunitoR],
                       color: Color(0xff7c82ba),
                       fontSize: 14,
