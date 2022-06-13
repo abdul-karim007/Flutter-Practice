@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mobilepaymentapp/functions/rewardcontButton.dart';
 
-import '../Constants/colorConstants/colorConstants.dart';
-
-offercont(context, clr, img1, img2, text1, text2) {
+rewardcont(context, clr, img1, img2, text1, text2) {
   return Padding(
     padding: const EdgeInsets.all(15),
     child: Container(
@@ -20,7 +19,7 @@ offercont(context, clr, img1, img2, text1, text2) {
               ),
               Positioned(
                 child: Image(image: AssetImage(img2)),
-                left: 6,
+                left: 15,
                 top: 6,
               )
             ],
@@ -29,6 +28,7 @@ offercont(context, clr, img1, img2, text1, text2) {
             padding: const EdgeInsets.only(left: 18),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   text1,
@@ -37,7 +37,8 @@ offercont(context, clr, img1, img2, text1, text2) {
                 Text(
                   text2,
                   style: TextStyle(color: Colors.white, fontSize: 14),
-                )
+                ),
+                rewardContButton()
               ],
             ),
           )

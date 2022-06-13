@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobilepaymentapp/pages/OpenPage.dart';
+import 'package:mobilepaymentapp/splashScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,8 +11,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: openPage(),
       debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: MySplash(),
+      ),
     );
   }
 }

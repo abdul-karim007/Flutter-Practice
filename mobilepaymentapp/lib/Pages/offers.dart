@@ -15,30 +15,34 @@ class Offers extends StatelessWidget {
       body: Column(
         children: [
           tospafeArea(context),
-          Row(
-            children: [
-              offercont(context, ColorConstants.color29, ImageConstants.firstbg,
-                  ImageConstants.firstimg),
-            ],
-          ),
-          Row(
-            children: [
-              offercont(context, ColorConstants.color30, ImageConstants.secbg,
-                  ImageConstants.secImg),
-            ],
-          ),
-          Row(
-            children: [
-              offercont(context, ColorConstants.color31, ImageConstants.thirdbg,
-                  ImageConstants.thirdimg),
-            ],
-          ),
-          Row(
-            children: [
-              offercont(context, ColorConstants.color30,
-                  ImageConstants.fourthbg, ImageConstants.fourthimg),
-            ],
-          )
+          offercont(
+              context,
+              ColorConstants.color29,
+              ImageConstants.firstbg,
+              ImageConstants.firstimg,
+              TextConstant.mobrecharge,
+              TextConstant.codefirst20),
+          offercont(
+              context,
+              ColorConstants.color30,
+              ImageConstants.secbg,
+              ImageConstants.secImg,
+              TextConstant.dthRecharge,
+              TextConstant.dthCode),
+          offercont(
+              context,
+              ColorConstants.color31,
+              ImageConstants.thirdbg,
+              ImageConstants.thirdimg,
+              TextConstant.flipkart,
+              TextConstant.flipkartOffer),
+          offercont(
+              context,
+              ColorConstants.color30,
+              ImageConstants.fourthbg,
+              ImageConstants.fourthimg,
+              TextConstant.offOnFlight,
+              TextConstant.flightOffers),
         ],
       ),
     );

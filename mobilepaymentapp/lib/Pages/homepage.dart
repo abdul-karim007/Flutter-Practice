@@ -3,7 +3,7 @@ import 'package:mobilepaymentapp/Constants/TextConstants/Textconstant.dart';
 import 'package:mobilepaymentapp/functions/SafeArea.dart';
 import 'package:mobilepaymentapp/functions/homepagesmall.dart';
 import 'package:mobilepaymentapp/functions/recentTrans.dart';
-import '../Constants/colorConstants/colorConstants.dart';
+import 'package:mobilepaymentapp/Constants/colorConstants/colorConstants.dart';
 import '../functions/homepageWidget.dart';
 
 class HomePage extends StatelessWidget {

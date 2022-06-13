@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobilepaymentapp/Pages/balance.dart';
 import 'package:mobilepaymentapp/Pages/homepage.dart';
 import 'package:mobilepaymentapp/Pages/offers.dart';
+import 'package:mobilepaymentapp/Pages/rewards.dart';
 
 import '../Constants/ImageConstants/imgconstants.dart';
 import '../Constants/TextConstants/Textconstant.dart';
@@ -91,7 +92,7 @@ tospafeArea(context) {
                   child: FlatButton(
                     color: Colors.transparent,
                     onPressed: () {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
                             builder: (context) => const HomePage()),
@@ -99,7 +100,7 @@ tospafeArea(context) {
                     },
                     child: Text(
                       TextConstant.home,
-                      style: TextStyle(color: Colors.white, fontSize: 20),
+                      style: TextStyle(color: Colors.white, fontSize: 18),
                     ),
                   ),
                   alignment: Alignment.topCenter,
@@ -136,7 +137,7 @@ tospafeArea(context) {
                     },
                     child: Text(
                       TextConstant.offers,
-                      style: TextStyle(color: Colors.white, fontSize: 20),
+                      style: TextStyle(color: Colors.white, fontSize: 18),
                     ),
                   ),
                   alignment: Alignment.topCenter,
@@ -147,10 +148,16 @@ tospafeArea(context) {
                   color: Colors.transparent,
                   child: FlatButton(
                     color: Colors.transparent,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Rewards()),
+                      );
+                    },
                     child: Text(
                       TextConstant.rewards,
-                      style: TextStyle(color: Colors.white, fontSize: 20),
+                      style: TextStyle(color: Colors.white, fontSize: 18),
                     ),
                   ),
                   alignment: Alignment.topCenter,

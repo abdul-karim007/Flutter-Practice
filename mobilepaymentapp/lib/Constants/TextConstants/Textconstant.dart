@@ -59,5 +59,18 @@ class TextConstant {
   static String mobrecharge = 'Mobile Recharge Offer';
   static String dthRecharge = 'DTH Recharge Offer';
   static String flipkart = 'Flipkart Shopping Offer';
-  static String offOnFlight = 'RS 50 off on Flight';
+  static String offOnFlight = 'RS 500 off on Flight';
+  static String codefirst20 = 'Use Code FIRST20. T&C Apply';
+  static String dthCode = 'Use Code DTH20. T&C Apply';
+  static String flipkartOffer = '50% off on all items. T&C Apply';
+  static String flightOffers = '500 Discount on flights. T&C Apply';
+  static String cashbackEarned = 'CashBacks Earned';
+  static String cash5000 = '5000 RS';
+  static String plusMoney = '+437 This Month';
+  static String cbhistory = 'View Your CashBack History';
+  static String wonscratchCards = 'Scratch Cards Won';
+  static String collectRewards = 'Collect Rewards';
+  static String percentFood = '50% off on Food Delivery';
+  static String kfcOrder = 'On Orders of KFC';
+  static String collectNow = 'Collect Now';
 }
