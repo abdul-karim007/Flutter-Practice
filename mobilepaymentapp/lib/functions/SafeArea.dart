@@ -2,15 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:mobilepaymentapp/Pages/balance.dart';
 import 'package:mobilepaymentapp/Pages/homepage.dart';
 import 'package:mobilepaymentapp/Pages/offers.dart';
+import 'package:mobilepaymentapp/Pages/profile.dart';
 import 'package:mobilepaymentapp/Pages/rewards.dart';
 
 import '../Constants/ImageConstants/imgconstants.dart';
 import '../Constants/TextConstants/Textconstant.dart';
-import '../Constants/colorConstants/colorConstants.dart';
+import 'package:mobilepaymentapp/Constants/colorConstants/colorConstants.dart'
+    as prefix;
 
 tospafeArea(context) {
   return Container(
-    color: Color(ColorConstants.safeAreacolor),
+    color: Color(0xff1F222A),
     child: SafeArea(
       maintainBottomViewPadding: true,
       child: Column(
@@ -18,47 +20,54 @@ tospafeArea(context) {
           Row(
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 15, right: 15),
-                child: CircleAvatar(
-                  backgroundColor: Colors.transparent,
-                  child: Image(
-                    image: AssetImage(ImageConstants.dp),
-                    height: 40,
-                    width: 40,
-                  ),
+                padding: const EdgeInsets.only(
+                  left: 8,
+                ),
+                child: IconButton(
+                  icon: Image.asset(ImageConstants.dp),
+                  iconSize: 50,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Profile()),
+                    );
+                  },
                 ),
               ),
               Expanded(
-                child: TextField(
-                  decoration: InputDecoration(
-                    hintText: TextConstant.homepageSearchBar,
-                    hintStyle: TextStyle(
-                        color: Color(0xff97A3AB),
-                        fontFamily: TextConstant.sansSerif,
-                        fontFamilyFallback: [TextConstant.spartanSemiBold]),
-                    suffixIcon: Icon(
-                      Icons.search,
-                      color: Color(
-                        0xff97A3AB,
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 8),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: TextConstant.homepageSearchBar,
+                      hintStyle: TextStyle(
+                          color: Color(0xff97A3AB),
+                          fontFamily: TextConstant.sansSerif,
+                          fontFamilyFallback: [TextConstant.spartanSemiBold]),
+                      suffixIcon: Icon(
+                        Icons.search,
+                        color: Color(
+                          0xff97A3AB,
+                        ),
+                        size: 30,
                       ),
-                      size: 30,
+                      filled: true,
+                      fillColor: Color(0xff343645),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
                     ),
-                    filled: true,
-                    fillColor: Color(ColorConstants.homeSearchbar),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30),
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontFamily: TextConstant.sansSerif,
+                      fontFamilyFallback: [TextConstant.spartanBold],
+                      color: Color(0xff4d5dfa),
                     ),
-                  ),
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontFamily: TextConstant.sansSerif,
-                    fontFamilyFallback: [TextConstant.spartanBold],
-                    color: Color(0xff4d5dfa),
                   ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 10),
+                padding: const EdgeInsets.only(right: 12),
                 child: Stack(
                   children: [
                     CircleAvatar(

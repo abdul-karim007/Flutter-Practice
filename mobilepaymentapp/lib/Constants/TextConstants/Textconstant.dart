@@ -73,4 +73,6 @@ class TextConstant {
   static String percentFood = '50% off on Food Delivery';
   static String kfcOrder = 'On Orders of KFC';
   static String collectNow = 'Collect Now';
+  static String elsa = 'Elsa';
+  static String level = 'Level 9';
 }
