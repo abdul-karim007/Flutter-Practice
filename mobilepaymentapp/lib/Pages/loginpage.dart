@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:mobilepaymentapp/Constants/ImageConstants/imgconstants.dart';
 import 'package:mobilepaymentapp/Constants/TextConstants/Textconstant.dart';
+import 'package:mobilepaymentapp/Constants/colorConstants/colorConstants.dart';
 import 'package:mobilepaymentapp/Pages/homepage.dart';
 
 class LoginPage extends StatelessWidget {
@@ -66,12 +67,12 @@ class LoginPage extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 20, bottom: 20),
                   child: MaterialButton(
                     height: 60,
-                    minWidth: 380,
+                    minWidth: 360,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(30))),
-                    color: Color(0xff4d5dfa),
+                    color: Color(ColorConstants.color34),
                     onPressed: () {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
                             builder: (context) => const HomePage()),

@@ -16,11 +16,11 @@ class ColorConstants {
   static int color10 = 0xff696D78;
   static int color11 = 0xff3BC4FF26;
   static int color12 = 0xff32652A;
-  static int color13 = 0xffFF823B26;
+  static int color13 = 0xff823B26;
   static int color14 = 0xff652A5F;
   static int color15 = 0xff4BFF3B26;
   static int color16 = 0xff652A2A;
-  static int color17 = 0xffFF3B8D26;
+  static int color17 = 0xff3B8D26;
   static int color18 = 0xff2A4065;
   static int color19 = 0xff242042;
   static int color20 = 0xffAAAAAA;
@@ -37,4 +37,7 @@ class ColorConstants {
   static int color31 = 0xff422028;
   static int color32 = 0xffFA4D96;
   static int color33 = 0xff1F222A;
+  static int color34 = 0xff4d5dfa;
+  static int color35 = 0xff97A3AB;
+  static int color36 = 0xff9A9B9B;
 }

@@ -18,11 +18,11 @@ class Profile extends StatelessWidget {
                 left: 12.0, right: 12, top: 36, bottom: 12),
             child: Container(
               alignment: Alignment.topLeft,
-              height: MediaQuery.of(context).size.height * .25,
+              height: MediaQuery.of(context).size.height * .31,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: Color(0xff1F222A),
+                color: Color(ColorConstants.color33),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(15),
@@ -35,18 +35,19 @@ class Profile extends StatelessWidget {
                         CircleAvatar(
                           child: Image(
                             image: AssetImage(ImageConstants.dp),
-                            height: 50,
-                            width: 50,
+                            height: 100,
+                            width: 100,
                           ),
                           radius: 20,
                         ),
                         //   children: [
-                        Text(
-                          TextConstant.elsa,
-                          style: TextStyle(color: Colors.white, fontSize: 30),
-                        ),
                         Column(
                           children: [
+                            Text(
+                              TextConstant.elsa,
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 30),
+                            ),
                             Text(
                               TextConstant.level,
                               style: TextStyle(
@@ -55,29 +56,48 @@ class Profile extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.only(top: 5.0),
                               child: Text(
-                                '435 EXP',
+                                TextConstant.exp,
                                 style: TextStyle(
                                     color: Color(0xffB0BEC5), fontSize: 15),
                               ),
                             )
                           ],
                         ),
+                        Icon(
+                          Icons.cancel_outlined,
+                          color: Colors.white,
+                          size: 25,
+                        )
                       ],
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 15),
+                      padding: const EdgeInsets.only(top: 15, bottom: 15),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Column(
                             children: [
                               Text(
-                                '1200',
+                                TextConstant.transNo,
                                 style: TextStyle(
                                     color: Color(0xff4D5DFA), fontSize: 30),
                               ),
                               Text(
-                                'Tranactions',
+                                TextConstant.transactions,
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 20),
+                              )
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Text(
+                                TextConstant.pointNo,
+                                style: TextStyle(
+                                    color: Color(0xff4D5DFA), fontSize: 30),
+                              ),
+                              Text(
+                                TextConstant.points,
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 20),
                               )
@@ -91,7 +111,7 @@ class Profile extends StatelessWidget {
                                     color: Color(0xff4D5DFA), fontSize: 30),
                               ),
                               Text(
-                                'Rank',
+                                TextConstant.rank,
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 20),
                               )
@@ -100,24 +120,69 @@ class Profile extends StatelessWidget {
                         ],
                       ),
                     ),
+                    Row(
+                      children: [
+                        ElevatedButton.icon(
+                          onPressed: () {},
+                          label: Text(
+                            TextConstant.editProfile,
+                            style: TextStyle(color: Colors.white, fontSize: 12),
+                          ),
+                          icon: Icon(Icons.edit),
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all(
+                              Color(ColorConstants.color28),
+                            ),
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(16),
+                              ),
+                            ),
+                          ),
+                        ),
+                        ElevatedButton.icon(
+                          onPressed: () {},
+                          label: Text(
+                            TextConstant.setting,
+                            style: TextStyle(color: Colors.white, fontSize: 12),
+                          ),
+                          icon: Icon(Icons.settings),
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all(
+                              Color(ColorConstants.color28),
+                            ),
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(16),
+                              ),
+                            ),
+                          ),
+                        ),
+                        ElevatedButton.icon(
+                          onPressed: () {},
+                          label: Text(
+                            TextConstant.share,
+                            style: TextStyle(color: Colors.white, fontSize: 12),
+                          ),
+                          icon: Icon(Icons.share),
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all(
+                              Color(ColorConstants.color28),
+                            ),
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(16),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    ),
                   ],
-                ),
-              ),
-            ),
-          ),
-          ElevatedButton(
-            onPressed: () {},
-            child: Text(
-              'Account Settings',
-              style: TextStyle(color: Colors.white, fontSize: 15),
-            ),
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(
-                Color(ColorConstants.color28),
-              ),
-              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16),
                 ),
               ),
             ),
@@ -165,19 +230,19 @@ class Profile extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'All Transactions',
+                          TextConstant.allTrans,
                           style: TextStyle(fontSize: 20, color: Colors.white),
                         ),
                         Text(
-                          'Pending Transactions',
+                          TextConstant.pendTrans,
                           style: TextStyle(fontSize: 20, color: Colors.white),
                         ),
                         Text(
-                          'Refund Status',
+                          TextConstant.refStatus,
                           style: TextStyle(fontSize: 20, color: Colors.white),
                         ),
                         Text(
-                          'Help and Support',
+                          TextConstant.helpSup,
                           style: TextStyle(fontSize: 20, color: Colors.white),
                         )
                       ],
@@ -250,15 +315,15 @@ class Profile extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'About US',
+                            TextConstant.aboutUS,
                             style: TextStyle(fontSize: 20, color: Colors.white),
                           ),
                           Text(
-                            'Terms & Conditions',
+                            TextConstant.tNc,
                             style: TextStyle(fontSize: 20, color: Colors.white),
                           ),
                           Text(
-                            'FeedBack',
+                            TextConstant.feedBack,
                             style: TextStyle(fontSize: 20, color: Colors.white),
                           ),
                         ],

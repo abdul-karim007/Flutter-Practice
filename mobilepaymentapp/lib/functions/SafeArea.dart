@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:mobilepaymentapp/Constants/colorConstants/colorConstants.dart';
 import 'package:mobilepaymentapp/Pages/balance.dart';
 import 'package:mobilepaymentapp/Pages/homepage.dart';
 import 'package:mobilepaymentapp/Pages/offers.dart';
 import 'package:mobilepaymentapp/Pages/profile.dart';
 import 'package:mobilepaymentapp/Pages/rewards.dart';
-
 import '../Constants/ImageConstants/imgconstants.dart';
 import '../Constants/TextConstants/Textconstant.dart';
-import 'package:mobilepaymentapp/Constants/colorConstants/colorConstants.dart'
-    as prefix;
+import '../Pages/notifications.dart';
 
 tospafeArea(context) {
   return Container(
@@ -41,18 +40,18 @@ tospafeArea(context) {
                     decoration: InputDecoration(
                       hintText: TextConstant.homepageSearchBar,
                       hintStyle: TextStyle(
-                          color: Color(0xff97A3AB),
+                          color: Color(ColorConstants.color35),
                           fontFamily: TextConstant.sansSerif,
                           fontFamilyFallback: [TextConstant.spartanSemiBold]),
                       suffixIcon: Icon(
                         Icons.search,
                         color: Color(
-                          0xff97A3AB,
+                          ColorConstants.color35,
                         ),
                         size: 30,
                       ),
                       filled: true,
-                      fillColor: Color(0xff343645),
+                      fillColor: Color(ColorConstants.homeSearchbar),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
                       ),
@@ -61,7 +60,7 @@ tospafeArea(context) {
                       fontSize: 20,
                       fontFamily: TextConstant.sansSerif,
                       fontFamilyFallback: [TextConstant.spartanBold],
-                      color: Color(0xff4d5dfa),
+                      color: Color(ColorConstants.color34),
                     ),
                   ),
                 ),
@@ -69,22 +68,30 @@ tospafeArea(context) {
               Padding(
                 padding: const EdgeInsets.only(right: 12),
                 child: Stack(
+                  alignment: AlignmentDirectional.center,
                   children: [
                     CircleAvatar(
-                      radius: 25,
-                      backgroundColor: Color(0xff343645),
-                      child: Icon(
-                        Icons.notifications_outlined,
-                        size: 40,
-                        color: Color(0xff97A3AB),
+                      radius: 28,
+                      backgroundColor: Color(ColorConstants.homeSearchbar),
+                      child: IconButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Notifications()),
+                          );
+                        },
+                        iconSize: 40,
+                        color: Color(ColorConstants.color35),
+                        icon: Icon(Icons.notifications_outlined),
                       ),
                     ),
                     Positioned(
                       child: CircleAvatar(
                         radius: 5,
                       ),
-                      top: 10,
-                      right: 10,
+                      top: 12,
+                      right: 12,
                     )
                   ],
                 ),

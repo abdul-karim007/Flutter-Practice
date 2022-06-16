@@ -75,4 +75,34 @@ class TextConstant {
   static String collectNow = 'Collect Now';
   static String elsa = 'Elsa';
   static String level = 'Level 9';
+  static String editProfile = 'Edit Profile';
+  static String allTrans = 'All Transactions';
+  static String pendTrans = 'Pending Transactions';
+  static String refStatus = 'Refund Status';
+  static String helpSup = 'Help & Support';
+  static String aboutUS = 'About US';
+  static String tNc = 'Terms & Conditions';
+  static String feedBack = 'Feedback';
+  static String setting = 'Settings';
+  static String share = 'Share';
+  static String transNo = '1200';
+  static String transactions = 'Transactions';
+  static String pointNo = '726';
+  static String points = 'Points';
+  static String rank = 'Rank';
+  static String exp = '435 exp';
+  static String notifications = 'Notifications';
+  static String rechargeComp = 'Recharge Completed';
+  static String rechargeCompSentence =
+      'Your last recharge on 9847229989 of 199 rs has been\nsuccesfully completed.';
+  static String rechargeCompDate = 'May 20 - 12:32 Pm';
+  static String moneyRec = 'Money Received';
+  static String moneyRecSentence =
+      'Your account ***21445 has been recieved an amount of\nRs 1000 using upi transaction.';
+  static String moneyRecDate = 'May 20 - 12:45 Pm';
+  static String offerUnlocked = 'Offer Unlocked';
+  static String offerUnlockedSentence =
+      'You have an unlocked offer avilable go to offer section\nor tap to view the offer.';
+  static String offerUnlockedDate = 'May 20 - 2:45 Pm';
+  static String recentNotifications = 'Recent Notifications';
 }
