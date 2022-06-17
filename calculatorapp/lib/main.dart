@@ -1,10 +1,8 @@
-import 'package:flutter/cupertino.dart';
+import 'package:calculatorapp/pages/home.dart';
 import 'package:flutter/material.dart';
 
-import 'pages/home.dart';
-
-void main(List<String> args) {
-  runApp(MyApp());
+void main() {
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -15,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Home(),
+        body: Calculator(),
       ),
     );
   }

@@ -105,4 +105,8 @@ class TextConstant {
       'You have an unlocked offer avilable go to offer section\nor tap to view the offer.';
   static String offerUnlockedDate = 'May 20 - 2:45 Pm';
   static String recentNotifications = 'Recent Notifications';
+  static String otherOptions = 'Other Options';
+  static String yourPayID = 'Your Pay ID';
+  static String payID = 'xyz@524899652';
+  static String showBnkAcctDetails = 'Show Bank Account Details';
 }

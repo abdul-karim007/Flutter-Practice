@@ -5,6 +5,7 @@ import 'package:mobilepaymentapp/functions/homepagesmall.dart';
 import 'package:mobilepaymentapp/functions/recentTrans.dart';
 import 'package:mobilepaymentapp/Constants/colorConstants/colorConstants.dart';
 import '../functions/homepageWidget.dart';
+import 'recievemoney.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -234,7 +235,13 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => RecMoney()),
+                            );
+                          },
                           child: Text(TextConstant.recieveMoney),
                           style: ButtonStyle(
                               backgroundColor: MaterialStateProperty.all(
