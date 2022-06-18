@@ -27,7 +27,8 @@ class _MySplashState extends State<MySplash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text('Splash Screen')),
+      backgroundColor: Colors.blue,
+      body: Center(child: Text('To-Do App', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),),),
     );
   }
 }

@@ -16,6 +16,8 @@ List<String> chats = [
   // TextConstants.listTitle5
 ];
 TextEditingController chatNameText = TextEditingController();
+TextEditingController update = TextEditingController();
+TextEditingController chatNameText1 = TextEditingController();
 
 class _HomeScreenState extends State<HomeScreen> {
   addChats() {
@@ -31,14 +33,83 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
-  updateChats(){
+  updateChats(index) {
     setState(() {
+      chats.replaceRange(index, index + 1, {chats[index]});
+      update.clear();
     });
   }
+
+  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        semanticLabel: 'Drawer',
+        child: Padding(
+          padding: const EdgeInsets.only(top: 12.0),
+          child: Column(
+            children: [
+              Text(
+                'To-Do App',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Icon(
+                        Icons.settings,
+                        size: 20,
+                      ),
+                      Text(
+                        'Settings',
+                        style: TextStyle(fontSize: 25),
+                      ),
+                    ]),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Icon(
+                      Icons.question_mark_rounded,
+                      size: 20,
+                    ),
+                    Text(
+                      'Help',
+                      style: TextStyle(fontSize: 25),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Icon(
+                      Icons.search,
+                      size: 20,
+                    ),
+                    Text(
+                      'About Us',
+                      style: TextStyle(fontSize: 25),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+      key: scaffoldKey,
+      appBar: AppBar(
+        title: Text(TextConstants.tittle),
+      ),
       body: SafeArea(
           child: Column(
         children: [
@@ -72,7 +143,44 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         IconButton(
                           onPressed: () {
-                            
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) => AlertDialog(
+                                      title: Text(
+                                        TextConstants.update,
+                                        style: TextStyle(
+                                            fontSize: 25,
+                                            fontWeight: FontWeight.w600),
+                                      ),
+                                      alignment: Alignment.center,
+                                      backgroundColor:
+                                          Colors.white.withOpacity(.5),
+                                      content: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceAround,
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.all(10.0),
+                                            child: TextField(
+                                              controller: update,
+                                              decoration: InputDecoration(
+                                                border: OutlineInputBorder(),
+                                              ),
+                                              onChanged: (value) {
+                                                chats[index] = value;
+                                              },
+                                            ),
+                                          ),
+                                          ElevatedButton(
+                                            onPressed: () {
+                                              updateChats(index);
+                                              Navigator.of(context).pop();
+                                            },
+                                            child: Text('update'),
+                                          )
+                                        ],
+                                      ),
+                                    ));
                           },
                           color: Colors.black,
                           icon: Icon(Icons.update),
@@ -84,6 +192,23 @@ class _HomeScreenState extends State<HomeScreen> {
               }),
             ),
           ),
+          // Padding(
+          //   padding: const EdgeInsets.only(bottom: 15.0),
+          //   child:
+          //    FloatingActionButton(
+          //     onPressed: () {
+          //       Scaffold.of(context).openDrawer();
+          //     },
+          //     child: Icon(Icons.add),
+          //   ),
+          // )
+          Builder(builder: (context) {
+            return FloatingActionButton(
+              child: Icon(Icons.add),
+              onPressed: () =>
+                  Scaffold.of(context).openDrawer(), // <-- Opens drawer.
+            );
+          }),
         ],
       )),
     );

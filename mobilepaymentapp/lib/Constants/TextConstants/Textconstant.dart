@@ -109,4 +109,6 @@ class TextConstant {
   static String yourPayID = 'Your Pay ID';
   static String payID = 'xyz@524899652';
   static String showBnkAcctDetails = 'Show Bank Account Details';
+  static String amazonCashBack = '20% Cashback on Amazon';
+  static String minOrder = 'Min. Order of 1000 Rs.';
 }

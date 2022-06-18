@@ -6,12 +6,13 @@ balpagebox(context, text1, text2, text3, clr) {
     child: Container(
       alignment: Alignment.center,
       height: MediaQuery.of(context).size.height * .12,
-      width: MediaQuery.of(context).size.width * .35,
+      width: MediaQuery.of(context).size.width * .37,
       decoration: BoxDecoration(
           color: Color(clr), borderRadius: BorderRadius.circular(10)),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               text1,

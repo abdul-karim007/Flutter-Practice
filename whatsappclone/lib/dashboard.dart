@@ -141,11 +141,17 @@ class Dashboard extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(items: [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.message),
-        ),
-      ],
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.message,
+                color: Colors.blueGrey,
+              ),
+              label: 'Message'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.call, color: Colors.blueGrey), label: 'Call'),
+        ],
       ),
     );
   }

@@ -3,7 +3,7 @@ import 'package:mobilepaymentapp/functions/rewardcontButton.dart';
 
 rewardcont(context, clr, img1, img2, text1, text2) {
   return Padding(
-    padding: const EdgeInsets.all(15),
+    padding: const EdgeInsets.all(10),
     child: Container(
       decoration: BoxDecoration(
           color: Color(clr), borderRadius: BorderRadius.circular(15)),

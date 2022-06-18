@@ -14,4 +14,6 @@ class ImageConstants {
   static String rewardimg1 = 'assets/images/imgreward1.png';
   static String rewardbg1 = 'assets/images/bgreward1.png';
   static String qrCode = 'assets/images/qrcode.png';
+  static String rewardimg2 = 'assets/images/imgreward2';
+  static String rewardbg2 = 'assets/images/bgreward2';
 }

@@ -3,7 +3,7 @@ import 'package:flutter/painting.dart';
 import 'package:mobilepaymentapp/Constants/ImageConstants/imgconstants.dart';
 import 'package:mobilepaymentapp/Constants/TextConstants/Textconstant.dart';
 import 'package:mobilepaymentapp/Constants/colorConstants/colorConstants.dart';
-import 'package:mobilepaymentapp/Pages/homepage.dart';
+import 'package:mobilepaymentapp/Pages/tabBar.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -75,7 +75,7 @@ class LoginPage extends StatelessWidget {
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const HomePage()),
+                            builder: (context) => const tabbarView()),
                       );
                     },
                     child: Text(TextConstant.verify),
