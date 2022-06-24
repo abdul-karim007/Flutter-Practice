@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:mobilepaymentapp/home.dart';
+import 'package:mobilepaymentapp/loginPage.dart';
 
 class MySplash extends StatefulWidget {
   const MySplash({Key? key}) : super(key: key);
@@ -19,7 +20,7 @@ class _MySplashState extends State<MySplash> {
       () => Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => HomeScreen(),
+            builder: (context) => LoginPage(),
           )),
     );
   }
