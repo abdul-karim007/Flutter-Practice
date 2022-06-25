@@ -1,6 +1,6 @@
+import 'package:assignmentsharedpref/Constants/text/textconstants.dart';
+import 'package:assignmentsharedpref/pages/saved.dart';
 import 'package:flutter/material.dart';
-import 'package:mobilepaymentapp/Constants/text/textconstants.dart';
-import 'package:mobilepaymentapp/loginPage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -20,6 +20,7 @@ List<String> chats = [
 TextEditingController chatNameText = TextEditingController();
 TextEditingController update = TextEditingController();
 TextEditingController chatNameText1 = TextEditingController();
+String toDoText = '';
 
 class _HomeScreenState extends State<HomeScreen> {
   addChats() {
@@ -43,6 +44,13 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    chatNameText.text = SavedData().getData() as String;
+    
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -104,18 +112,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-              TextButton(
-                  onPressed: () async {
-                    SharedPreferences prefs =
-                        await SharedPreferences.getInstance();
-                    prefs.remove('email');
-                    prefs.remove('password');
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                            builder: (BuildContext ctx) => LoginPage()));
-                  },
-                  child: Text('Logout'))
+              TextButton(onPressed: () {}, child: Text('Logout'))
             ],
           ),
         ),
@@ -132,8 +129,10 @@ class _HomeScreenState extends State<HomeScreen> {
             child: TextField(controller: chatNameText),
           ),
           ElevatedButton(
-            onPressed: () {
+            onPressed: () async {
               addChats();
+              await SavedData().setData(chatNameText.text);
+              // todoData(chatNameText.text);
             },
             child: Text('Add Chats'),
           ),
@@ -228,5 +227,13 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  
+  Future<void> todoData(todo) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('todoData', todo);
+  }
+
+  Future<void> saveToDo() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.getString('todoData');
+  }
 }

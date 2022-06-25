@@ -1,6 +1,5 @@
+import 'package:assignmentsharedpref/pages/todopage.dart';
 import 'package:flutter/material.dart';
-import 'package:mobilepaymentapp/home.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -50,31 +49,17 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
           ElevatedButton(
-            child: Text('Login'),
-            onPressed: () async {
-              SharedPreferences prefs = await SharedPreferences.getInstance();
-              prefs.setString('emailData', email.text);
-              prefs.setString('password', password.text);
-              print(email);
-              print(password);
-              Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                      builder: (BuildContext ctx) => HomeScreen()));
-            
-            }
-          )
+              child: Text('Login'),
+              onPressed: () {
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext ctx) => HomeScreen()));
+              })
         ],
       ),
     );
   }
 
-  // Future<void> loginData() async {
-  //   SharedPreferences prefs = await SharedPreferences.getInstance();
-  //   prefs.setString('emailData', email.text);
-  //   email.clear();
-  //   SharedPreferences pref = await SharedPreferences.getInstance();
-  //   prefs.setString('password', password.text);
-  //   password.clear();
-  // }
+  
 }

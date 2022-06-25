@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:loginapp/signuppage.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class Abc extends StatelessWidget {
-  const Abc({Key? key}) : super(key: key);
+final TextEditingController emailController = TextEditingController();
+final TextEditingController passwordController = TextEditingController();
+SharedPreferences? prefs;
+
+class SignIn extends StatelessWidget {
+  Future init() async {
+    prefs = await SharedPreferences.getInstance();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // ignore: prefer_const_literals_to_create_immutables
       body: Container(
         alignment: Alignment.bottomRight,
         child: Column(
-          // ignore: prefer_const_literals_to_create_immutables
           children: <Widget>[
-            // ignore: prefer_const_constructors
             SizedBox(
               child: const Padding(
                 padding: EdgeInsets.all(20),
@@ -25,29 +29,30 @@ class Abc extends StatelessWidget {
               height: 80,
               width: double.infinity,
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.all(5.0),
               child: TextField(
+                controller: emailController,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(), hintText: 'Enter Your ID'),
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.all(5),
               child: TextField(
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     hintText: 'Enter Your Password'),
+                controller: passwordController,
               ),
             ),
             FlatButton(
-              child: const Text(
-                'Login',
-              ),
-              color: Colors.black,
-              textColor: Colors.white,
-              onPressed: () {},
-            ),
+                child: const Text(
+                  'Login',
+                ),
+                color: Colors.black,
+                textColor: Colors.white,
+                onPressed: save),
             FlatButton(
               child: const Text(
                 'Sign Up',
@@ -61,9 +66,18 @@ class Abc extends StatelessWidget {
                 );
               },
             ),
+            if (prefs != null)
+              Text(
+                  'email = ${prefs?.get('email')}, password = ${prefs?.get('password')}')
           ],
         ),
       ),
     );
+  }
+
+  save() async {
+    await init();
+    prefs?.setString('email', emailController.text.toString());
+    prefs?.setString('password', passwordController.text.toString());
   }
 }
