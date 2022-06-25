@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobilepaymentapp/Constants/text/textconstants.dart';
 import 'package:mobilepaymentapp/loginPage.dart';
+import 'package:mobilepaymentapp/saved.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -19,9 +20,13 @@ List<String> chats = [
 ];
 TextEditingController chatNameText = TextEditingController();
 TextEditingController update = TextEditingController();
-TextEditingController chatNameText1 = TextEditingController();
+SharedPreferences? prefs;
 
 class _HomeScreenState extends State<HomeScreen> {
+  Future init() async {
+    prefs = await SharedPreferences.getInstance();
+  }
+
   addChats() {
     setState(() {
       chats.add(chatNameText.text);
@@ -110,12 +115,23 @@ class _HomeScreenState extends State<HomeScreen> {
                         await SharedPreferences.getInstance();
                     prefs.remove('email');
                     prefs.remove('password');
-                    Navigator.pushReplacement(
+                    Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (BuildContext ctx) => LoginPage()));
                   },
-                  child: Text('Logout'))
+                  child: Text('Logout')),
+              TextButton(
+                  onPressed: () async {
+                    SharedPreferences prefs =
+                        await SharedPreferences.getInstance();
+                    prefs.remove('email');
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext ctx) => Saved()));
+                  },
+                  child: Text('Saved'))
             ],
           ),
         ),
@@ -134,6 +150,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ElevatedButton(
             onPressed: () {
               addChats();
+              save();
             },
             child: Text('Add Chats'),
           ),
@@ -228,5 +245,15 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  
+  save() async {
+    prefs?.remove('email');
+    prefs?.remove('password');
+    await init();
+    prefs?.setString('chatNameText', chatNameText.text.toString());
+  }
+
+  updateSave() async {
+    await init();
+    prefs?.setString('update', update.text.toString());
+  }
 }
