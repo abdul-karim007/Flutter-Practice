@@ -11,6 +11,9 @@ class SignIn extends StatelessWidget {
     prefs = await SharedPreferences.getInstance();
   }
 
+  var eml = 'abdullah';
+  var pass = 'abdul';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,7 +55,12 @@ class SignIn extends StatelessWidget {
                 ),
                 color: Colors.black,
                 textColor: Colors.white,
-                onPressed: save),
+                onPressed: () {
+                  if ((emailController.text == eml && passwordController.text == pass) ==
+                      true) {
+                    save(context);
+                  }
+                }),
             FlatButton(
               child: const Text(
                 'Sign Up',
@@ -75,9 +83,13 @@ class SignIn extends StatelessWidget {
     );
   }
 
-  save() async {
+  save(context) async {
     await init();
     prefs?.setString('email', emailController.text.toString());
     prefs?.setString('password', passwordController.text.toString());
+   Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const Signup()),
+    ); 
   }
 }
