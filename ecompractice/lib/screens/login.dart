@@ -1,6 +1,7 @@
+import 'package:ecompractice/constants/colors.dart';
+import 'package:ecompractice/functions/loginTextbutton.dart';
+import 'package:ecompractice/screens/home.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
@@ -8,7 +9,8 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff5956E9),
+      resizeToAvoidBottomInset: false,
+      backgroundColor: Color(ColorConstant.mainBlue),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -52,6 +54,7 @@ class Login extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height * .61,
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
                   padding: const EdgeInsets.only(top: 20.0, left: 20),
@@ -104,13 +107,40 @@ class Login extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                    width: MediaQuery.of(context).size.width * .8,
-                    child: TextField(
-                      decoration: InputDecoration(fillColor: Colors.grey),
-                    ))
+                  width: MediaQuery.of(context).size.width * .8,
+                  child: TextField(
+                    decoration: InputDecoration(
+                        fillColor: Colors.grey,
+                        suffix: loginTextbutton('Show')),
+                  ),
+                ),
+                loginTextbutton('Forgot Password?'),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * .8,
+                  height: MediaQuery.of(context).size.height * .08,
+                  child: ElevatedButton(
+                    onPressed: () { Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => const Home()),
+  );
+
+},
+                    child: Text(
+                      'Login',
+                      style: TextStyle(fontWeight: FontWeight.w500),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      primary: Color(ColorConstant.mainBlue),
+                      shape: new RoundedRectangleBorder(
+                        borderRadius: new BorderRadius.circular(15),
+                      ),
+                    ),
+                  ),
+                ),
+                loginTextbutton('Create Account')
               ],
             ),
-          )
+          ),
         ],
       ),
     );

@@ -1,3 +1,4 @@
+import 'package:ecompractice/constants/colors.dart';
 import 'package:ecompractice/screens/login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
@@ -9,7 +10,7 @@ class Splash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff5956E9),
+      backgroundColor: Color(ColorConstant.mainBlue),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -42,7 +43,7 @@ class Splash extends StatelessWidget {
                 child: Text(
                   'Get Started',
                   style: TextStyle(
-                      color: Color(0xff5956E9), fontWeight: FontWeight.w600),
+                      color: Color(ColorConstant.mainBlue), fontWeight: FontWeight.w600),
                 ),
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(Colors.white)),
